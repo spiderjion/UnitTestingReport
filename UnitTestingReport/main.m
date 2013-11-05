@@ -101,7 +101,10 @@ int main(int argc, const char * argv[])
             : [[NSString stringWithFormat:@"%s/test.txt",fullPathWithPath(argv[1])] UTF8String];
             sprintf(command, "cd %s "
                     "\n"
-                    "xcodebuild -scheme %s -configuration Debug -destination OS=6.0,name=iPhone clean test >> %s",
+                    "xcodebuild -scheme %s "
+                    "-configuration Debug "
+                    "-destination OS=7.0,name=\"iPhone Retina (4-inch)\" "
+                    "clean test 1> %s",
                     fullPathWithPath(argv[1]),
                     [scheme UTF8String],
                     output);
